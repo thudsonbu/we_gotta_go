@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	msg := morestrings.ReverseRunes("Hello, me.");
+	msg := morestrings.ReverseRunes("Hello, me.")
 	fmt.Println(msg)
 }
