@@ -8,6 +8,11 @@ vet: fmt
 	go vet ./...
 .PHONY:vet
 
+vet:
+	go vet ./...
+	shadow ./...
+.PHONY:vet
+
 build: vet
 	go build hello.go
 .PHONY:build
