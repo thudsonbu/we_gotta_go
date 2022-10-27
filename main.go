@@ -1,10 +1,9 @@
 package main
 
 import (
-	"hello/shadow"
+	"hello/scoped"
 )
 
 func main() {
-	shadow.Shadow()
-	shadow.Shadow2()
+	scoped.Scoped()
 }
