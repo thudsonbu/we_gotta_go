@@ -6,10 +6,6 @@ fmt:
 
 vet: fmt
 	go vet ./...
-.PHONY:vet
-
-vet:
-	go vet ./...
 	shadow ./...
 .PHONY:vet
 

@@ -2,7 +2,7 @@ package fn
 
 import "fmt"
 
-func add(x int, y int) int {
+func Add(x int, y int) int {
 	return x + y
 }
 
@@ -12,12 +12,12 @@ type Name struct {
 	lastName  string
 }
 
-func fullName(name Name) string {
+func FullName(name Name) string {
 	return name.firstName + " " + name.lastName
 }
 
 // Use variadic parameters when you don't know how many parameters you'll need
-func sum(nums ...int) int {
+func Sum(nums ...int) int {
 	total := 0
 	for _, num := range nums {
 		total += num
@@ -25,15 +25,15 @@ func sum(nums ...int) int {
 	return total
 }
 
-func main() {
+func Main() {
 	arr := [3]int{1, 2, 3}
 
 	// Pass array to sum
-	fmt.Println(sum(arr[:]...)) // 6
+	fmt.Println(Sum(arr[:]...)) // 6
 }
 
 // Multiple return values are supported
-func divAndRemainder(x int, y int) (int, int, error) {
+func DivAndRemainder(x int, y int) (int, int, error) {
 	if y == 0 {
 		return 0, 0, fmt.Errorf("Cannot divide by zero")
 	}
@@ -43,7 +43,7 @@ func divAndRemainder(x int, y int) (int, int, error) {
 // functions can have types
 type runnableFunc func(a int) (int, error)
 
-func runFunc(fn runnableFunc, arg int) (int, error) {
+func RunFunc(fn runnableFunc, arg int) (int, error) {
 	out, err := fn(arg)
 
 	if err != nil {

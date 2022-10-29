@@ -27,7 +27,7 @@ func TestRunFunc(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		got, _ := runFunc(c.fn, c.in)
+		got, _ := RunFunc(c.fn, c.in)
 
 		if got != c.want {
 			t.Errorf("runFunc(%q) output %q, expected %q", c.in, got, c.want)
