@@ -9,7 +9,7 @@ func add(x int, y int) int {
 // Simulate named and optional parameters with a struct
 type Name struct {
 	firstName string
-	lastName string
+	lastName  string
 }
 
 func fullName(name Name) string {
@@ -38,4 +38,19 @@ func divAndRemainder(x int, y int) (int, int, error) {
 		return 0, 0, fmt.Errorf("Cannot divide by zero")
 	}
 	return x / y, x % y, nil
+}
+
+// functions can have types
+type runnableFunc func(a int) (int, error)
+
+func runFunc(fn runnableFunc, arg int) (int, error) {
+	out, err := fn(arg)
+
+	if err != nil {
+		fmt.Println(err)
+
+		return 0, err
+	}
+
+	return out, nil
 }
