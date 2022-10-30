@@ -1,6 +1,7 @@
 package pbv
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -38,5 +39,41 @@ func TestReZeroMap(t *testing.T) {
 
 	if ok {
 		t.Error("ReZeroMap set the zero key when it did not exist")
+	}
+}
+
+func TestZeroInt(t *testing.T) {
+	var x int = 3
+
+	y := ReZeroInt(x)
+
+	if x != 3 {
+		t.Error("ReZeroInt modified the input value")
+	}
+
+	if y != 0 {
+		t.Errorf("ReZeroInt did not return 0. It returned:")
+		t.Error(y)
+	}
+}
+
+func TestReZeroSlice(t *testing.T) {
+	s := []int{1, 2, 3}
+
+	zeroed := ReZeroSlice(s)
+
+	for i, v := range zeroed {
+		fmt.Print(i, v)
+		if v != 0 {
+			t.Error("ReZeroSlice did not set zero at index:")
+			t.Error(i)
+		}
+	}
+
+	for i, v := range []int{0, 0, 0} {
+		if s[i] != v {
+			t.Error("ReZeroSlice did not modify original slice at index:")
+			t.Error(i)
+		}
 	}
 }
