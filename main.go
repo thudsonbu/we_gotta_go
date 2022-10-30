@@ -1,9 +1,7 @@
 package main
 
-import (
-	"hello/scoped"
-)
+import "fmt"
 
 func main() {
-	scoped.Scoped()
+	fmt.Print("Hello")
 }

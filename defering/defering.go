@@ -6,6 +6,9 @@ import (
 	"os"
 )
 
+// A common pattern in Go and many functional languages is to return a cleanup
+// function when a function accesses an external resouce. This function
+// returns a function that closes the file that it opens.
 func getFile(name string) (*os.File, func(), error) {
 	file, err := os.Open(name)
 
@@ -13,12 +16,15 @@ func getFile(name string) (*os.File, func(), error) {
 		return nil, nil, err
 	}
 
-	// the getFile function returns a cleanup function, a common pattern in go
 	return file, func() {
 		file.Close()
 	}, err
 }
 
+// This function performs the same as the cat unix commnand. The thing to note
+// is that the the closing of the file is scheduled for after the function
+// completes using defer. You can run this with:
+// go run ./defering/defering.go ./defering/file.txt
 func main() {
 	if len(os.Args) < 2 {
 		log.Fatal("no file specified")
