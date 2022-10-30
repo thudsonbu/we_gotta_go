@@ -23,7 +23,7 @@ func TestReZeroMap(t *testing.T) {
 	}
 
 	if err != nil {
-		t.Errorf("ReZeroMap returned an error with a valid map, error: %q", err )
+		t.Errorf("ReZeroMap returned an error with a valid map, error: %q", err)
 	}
 
 	var badMap map[int]int
