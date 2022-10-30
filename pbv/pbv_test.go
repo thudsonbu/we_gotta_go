@@ -19,7 +19,7 @@ func TestReZeroMap(t *testing.T) {
 	}
 
 	if newVal != 0 {
-		t.Error("ReZeroMap did not set zero key valye to zero")
+		t.Error("ReZeroMap did not set zero key value to zero")
 	}
 
 	if err != nil {
