@@ -27,15 +27,15 @@ func (p *Person) IsNil() bool {
 // Score it cannot be used or compared to a Score without an explicit
 // conversion.
 type Score struct {
-  score int
-  name string
+	score int
+	name  string
 }
 
 type HighScore Score
 
 // HighScore will also not include any methods defined on Score.
 func (s *Score) increment() int {
-  s.score += 1
+	s.score += 1
 
 	return s.score
 }
