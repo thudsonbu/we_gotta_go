@@ -27,7 +27,7 @@ func ReZeroMap(m numMap) (numMap, error) {
 // Slices are also implemented as pointers, so they can also be mutated within
 // functions. However, their length cannot be changed.
 func ReZeroSlice(s []int) []int {
-	for i, _ := range s {
+	for i := range s {
 		s[i] = 0
 	}
 

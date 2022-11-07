@@ -1,9 +1,6 @@
 package pbv
 
-import (
-	"fmt"
-	"testing"
-)
+import "testing"
 
 func TestReZeroMap(t *testing.T) {
 	goodMap := numMap{
@@ -63,7 +60,6 @@ func TestReZeroSlice(t *testing.T) {
 	zeroed := ReZeroSlice(s)
 
 	for i, v := range zeroed {
-		fmt.Print(i, v)
 		if v != 0 {
 			t.Error("ReZeroSlice did not set zero at index:")
 			t.Error(i)
