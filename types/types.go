@@ -17,13 +17,13 @@ func (p Person) String() string {
 	return fmt.Sprintf("%s is %d years old", p.Name, p.Age)
 }
 
-// Methods that take a pointer can determing if a value is nil by checking
+// Methods that take a pointer can determine if a value is nil by checking
 // if the pointer is nil.
 func (p *Person) IsNil() bool {
 	return p == nil
 }
 
-// Go supports subtyping but not inhertiance. Thought HighScore is a subtype of
+// Go supports sub-typing but not inheritance. Thought HighScore is a subtype of
 // Score it cannot be used or compared to a Score without an explicit
 // conversion.
 type Score struct {

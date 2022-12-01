@@ -8,7 +8,7 @@ import (
 // the below example for the length of the if block. This behavior is known as
 // shadowing.
 func Shadow() {
-	fmt.Println("Shaddow")
+	fmt.Println("Shadow")
 	x := 5
 	if x <= 5 {
 		x := 7
@@ -18,7 +18,7 @@ func Shadow() {
 }
 
 func NoShadow() {
-	fmt.Println("Shaddow 2")
+	fmt.Println("Shadow 2")
 	x := 5
 	if x <= 5 {
 		x = 7
