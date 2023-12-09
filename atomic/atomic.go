@@ -62,6 +62,10 @@ type SafeCounterCAS struct {
 
 // Inc increments the counter for the given key.
 func (c *SafeCounterCAS) Inc(key string) {
+	if c.v[key] == nil {
+		var i int32
+		c.v[key] = &i
+	}
 	var oldValue, newValue int32
 	for {
 		oldValue = *c.v[key]
